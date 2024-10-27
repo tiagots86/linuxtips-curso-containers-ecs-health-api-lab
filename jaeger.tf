@@ -14,13 +14,8 @@ module "jaeger-collector" {
 
   container_image = "jaegertracing/all-in-one:1.57"
 
-  // Service Connect
-  use_service_connect  = true
-  service_protocol     = "http"
-  service_connect_name = data.aws_ssm_parameter.service_connect_name.value
-  service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
-
-  use_lb = false
+  service_listener = data.aws_ssm_parameter.listener_internal.value
+  alb_arn          = data.aws_ssm_parameter.alb_internal.value
 
   service_task_execution_role = aws_iam_role.main.arn
 
