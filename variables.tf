@@ -47,5 +47,5 @@ variable "ssm_service_connect_arn" {
 }
 
 variable "ssm_service_connect_name" {
-  default = "/linuxtips/ecs/service-connet/name"
+  default = "/linuxtips/ecs/service-connect/name"
 }
