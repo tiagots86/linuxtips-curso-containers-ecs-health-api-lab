@@ -57,11 +57,12 @@ module "jaeger-collector" {
 
   service_discovery_namespace = data.aws_ssm_parameter.service_discovery_namespace.value
 
+  // Service Connect
+  use_service_connect  = true
+  service_protocol     = "http"
+  service_connect_name = data.aws_ssm_parameter.service_connect_name.value
+  service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
+  use_lb               = false
+
 }
 
-// Service Connect
-use_service_connect  = true
-service_protocol     = "http"
-service_connect_name = data.aws_ssm_parameter.service_connect_name.value
-service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
-use_lb = false

@@ -69,10 +69,11 @@ module "health_api" {
     data.aws_ssm_parameter.private_subnet_3.value,
   ]
 
+  // Service Connect
+  use_service_connect  = true
+  service_protocol     = "http"
+  service_connect_name = data.aws_ssm_parameter.service_connect_name.value
+  service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
+
 }
 
-// Service Connect
-use_service_connect  = true
-service_protocol     = "http"
-service_connect_name = data.aws_ssm_parameter.service_connect_name.value
-service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value

@@ -57,11 +57,13 @@ module "proteins" {
     data.aws_ssm_parameter.private_subnet_2.value,
     data.aws_ssm_parameter.private_subnet_3.value,
   ]
+
+  // Service Connect
+  use_service_connect  = true
+  service_protocol     = "grpc"
+  service_connect_name = data.aws_ssm_parameter.service_connect_name.value
+  service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
+  use_lb               = false
+
 }
 
-// Service Connect
-use_service_connect  = true
-service_protocol     = "grpc"
-service_connect_name = data.aws_ssm_parameter.service_connect_name.value
-service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
-use_lb = false
