@@ -74,7 +74,7 @@ module "recommendations" {
   service_protocol     = "grpc"
   service_connect_name = data.aws_ssm_parameter.service_connect_name.value
   service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
-  use_lb               = false
+  use_alb               = false
 
 }
 
