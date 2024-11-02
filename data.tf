@@ -38,6 +38,6 @@ data "aws_ssm_parameter" "service_connect_name" {
   name = var.ssm_service_connect_name
 }
 
-data "aws_ssm_parameter" "service_connect_namespace_arn" {
+data "aws_ssm_parameter" "service_connect_arn" {
   name = var.ssm_service_connect_arn
 }
