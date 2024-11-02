@@ -1,5 +1,5 @@
 module "water" {
-  source = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=v1.3.1"
+  source       = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=v1.3.1"
   region       = var.region
   cluster_name = var.cluster_name
 
@@ -58,3 +58,9 @@ module "water" {
   ]
 
 }
+
+// Service Connect
+use_service_connect  = true
+service_protocol     = "grpc"
+service_connect_name = data.aws_ssm_parameter.service_connect_name.value
+service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value

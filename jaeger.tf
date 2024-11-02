@@ -1,5 +1,5 @@
 module "jaeger-collector" {
-  source = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=v1.3.1"
+  source       = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=v1.3.1"
   region       = var.region
   cluster_name = var.cluster_name
 
@@ -58,3 +58,9 @@ module "jaeger-collector" {
   service_discovery_namespace = data.aws_ssm_parameter.service_discovery_namespace.value
 
 }
+
+// Service Connect
+use_service_connect  = true
+service_protocol     = "http"
+service_connect_name = data.aws_ssm_parameter.service_connect_name.value
+service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
