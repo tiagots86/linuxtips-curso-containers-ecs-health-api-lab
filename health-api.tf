@@ -1,5 +1,5 @@
 module "health_api" {
-  source       = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=v1.3.1"
+  source       = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=v1.4.0"
   region       = var.region
   cluster_name = var.cluster_name
 
