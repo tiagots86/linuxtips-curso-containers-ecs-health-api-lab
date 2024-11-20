@@ -1,5 +1,5 @@
 module "jaeger-collector" {
-  source       = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=v1.4.0"
+  source       = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=main"
   region       = var.region
   cluster_name = var.cluster_name
 

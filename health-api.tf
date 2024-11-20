@@ -1,5 +1,5 @@
 module "health_api" {
-  source       = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=v1.4.0"
+  source       = "github.com/tiagots86/linuxtips-curso-containers-ecs-service-module?ref=main"
   region       = var.region
   cluster_name = var.cluster_name
 
@@ -78,12 +78,14 @@ module "health_api" {
   ]
 
   // Service Connect
-  use_service_connect  = true
+  use_service_connect  = false
   service_protocol     = "http"
   service_connect_name = data.aws_ssm_parameter.service_connect_name.value
   service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
 
   deployment_controller = "CODE_DEPLOY"
+
+  codedeploy_strategy = "CodeDeployDefault.ECSLinear10PercentEvery1Minutes"
 
 }
 
