@@ -62,6 +62,10 @@ module "health_api" {
     {
       name  = "RECOMMENDATIONS_SERVICE_ENDPOINT",
       value = "nutrition-recommendations.linuxtips-ecs-cluster.discovery.com:30000"
+    },
+    {
+      name = "version"
+      value = timestamp()
     }
   ]
 

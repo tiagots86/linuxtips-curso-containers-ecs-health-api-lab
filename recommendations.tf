@@ -59,6 +59,10 @@ module "recommendations" {
       name  = "CALORIES_SERVICE_ENDPOINT"
       value = "nutrition-calories.linuxtips-ecs-cluster.discovery.com:30000"
     },
+    {
+      name = "version"
+      value = timestamp()
+    }
   ]
 
   vpc_id = data.aws_ssm_parameter.vpc.value
