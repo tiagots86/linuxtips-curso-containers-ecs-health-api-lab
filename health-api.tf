@@ -64,7 +64,7 @@ module "health_api" {
       value = "nutrition-recommendations.linuxtips-ecs-cluster.discovery.com:30000"
     },
     {
-      name = "version"
+      name  = "version"
       value = timestamp()
     }
   ]
@@ -82,6 +82,8 @@ module "health_api" {
   service_protocol     = "http"
   service_connect_name = data.aws_ssm_parameter.service_connect_name.value
   service_connect_arn  = data.aws_ssm_parameter.service_connect_arn.value
+
+  deployment_controller = "CODE_DEPLOY"
 
 }
 

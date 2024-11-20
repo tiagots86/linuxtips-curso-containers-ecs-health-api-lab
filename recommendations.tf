@@ -60,7 +60,7 @@ module "recommendations" {
       value = "nutrition-calories.linuxtips-ecs-cluster.discovery.com:30000"
     },
     {
-      name = "version"
+      name  = "version"
       value = timestamp()
     }
   ]
